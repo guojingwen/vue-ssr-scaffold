@@ -23,7 +23,7 @@
       "env": {
         "NODE_ENV": "production"
       },
-      "post-deploy": "cnpm i && npm run build && pm2 restart ecosystem.json --env production"
+      "post-deploy": "npm run build && pm2 restart ecosystem.json --env production"
     }
   }
 }
