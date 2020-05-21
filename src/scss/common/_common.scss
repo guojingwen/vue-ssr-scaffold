@@ -1,0 +1,22 @@
+[v-cloak] {
+    display: none;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); // -webkit-text-size-adjust: none;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    &.top-ios-bar {
+        padding-top: 20px;
+    }
+    background: #FFFFFF;
+    box-sizing: border-box;
+    padding-top: constant(safe-area-inset-top) !important;
+    padding-top: env(safe-area-inset-top) !important;
+}
+body {
+    background: $color-gray-bg;
+}

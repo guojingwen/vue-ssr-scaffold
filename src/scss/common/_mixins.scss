@@ -1,0 +1,174 @@
+// Demo  可随时修改
+@mixin horizontal-line($border:0.5px dashed #ccc, $padding:10px) {
+    border-bottom: $border;
+    padding-top: $padding;
+    padding-bottom: $padding;
+}
+@mixin i-mixin-style($width:0, $height:0, $radius: 0) {
+    width: $width + px;
+    height: $height+ px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: $radius+ px;
+}
+@mixin i-mixin-ico($url, $width:0, $height:0, $size:contain) {
+    background: url($url) no-repeat;
+    width: $width + px;
+    height: $height + px;
+    background-size: $size;
+    display: inline-block;
+}
+@mixin i-back-ico($url) {
+    background: url($url) no-repeat;
+    background-size: contain;
+}
+@mixin i-ico($url) {
+    background-image: url($url);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@mixin text-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+@mixin line-num-overflow($num) {
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: $num !important;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+@mixin border-top-btom() {
+    border-top: 1px solid $color-gray-lighter;
+    border-bottom: 1px solid $color-gray-lighter;
+}
+@mixin on() {
+    border-bottom: 2px solid #3f86ff !important;
+    color: #3f86ff;
+}
+@mixin icon-border($width, $color, $radius, $fontsize:12) {
+    border: $width + px solid $color;
+    border-radius: $radius + px;
+    color: $color;
+    font-size: $fontsize + px;
+    margin-right: 2px;
+}
+@mixin line-clamp ($clamp, $fontsize){
+    font-size: $fontsize + px;
+    -webkit-line-clamp: $clamp;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+}
+
+// flex 布局mixins
+@mixin flex-1() {
+    flex: 1;
+}
+@mixin flex-ver-center() {
+    display: flex;
+    align-items: center;
+}
+@mixin flex-ver-center-multi() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+@mixin flex-hor-center() {
+    display: flex;
+    justify-content: center;
+}
+@mixin flex-ver-hor-center() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flex-ver-hor-center-multi() {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/**
+  0.5px 精美边框 函数
+  $directions 是一个数组 (T, B, R, L)
+  T代表top， B代表bottom, R代表right, L代表left 循序无关
+  $borderColor 颜色值
+  例子: @include myBorders((T, B));
+ */
+@mixin myBorders($directions, $borderColor: $color-gray-border, $bg-color: $color-white) {
+    $directionsMap: (
+        L: linear-gradient(90deg, $borderColor, $borderColor 50%, transparent 50%) bottom left no-repeat,
+        R: linear-gradient(270deg, $borderColor, $borderColor 50%, transparent 50%) bottom right no-repeat,
+        T: linear-gradient(180deg, $borderColor, $borderColor 50%, transparent 50%) top left no-repeat,
+        B: linear-gradient(360deg, $borderColor, $borderColor 50%, transparent 50%) bottom left no-repeat
+    );
+    $sizesMap: (
+        L: 1px 100%,
+        R: 1px 100%,
+        T: 100% 1px,
+        B: 100% 1px
+    );
+    $dirResult: ();
+    $sizResult: ();
+    @each $direction in $directions {
+        $dirResult: append($dirResult, map_get($directionsMap, $direction), comma);
+        $sizResult: append($sizResult, map_get($sizesMap, $direction), comma);
+    }
+    background: $dirResult;
+    background-size: $sizResult;
+    background-color: $bg-color;
+}
+
+@mixin mask ($backgroundColor: rgba(0, 0, 0, .3), $zIndex: 100) {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: $zIndex;
+    background-color: $backgroundColor;
+}
+
+@mixin abs-left-center ($width) {
+    width: $width;
+    position: absolute;
+    left: 50%;
+    margin-left: -$width/2;
+}
+
+@mixin abs-top-center ($height) {
+    height: $height;
+    position: absolute;
+    top: 50%;
+    margin-top: -$height/2;
+}
+
+@mixin abs-left-top-center ($width, $height) {
+    width: $width;
+    height: $height;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -$width/2;
+    margin-top: -$height/2;
+}
+
+@mixin background-cover () {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@mixin iphone-x-footer () {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+}

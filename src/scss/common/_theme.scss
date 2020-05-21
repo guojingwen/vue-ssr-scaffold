@@ -1,0 +1,112 @@
+/**
+ * 颜色主题，色值为6位值
+ * 规则：
+ * $color-{颜色}-{用途}-{深浅}
+ * 颜色：英文   white、gray
+ * 用途：不可缺省
+ * 		bg: 背景
+ * 		bd：边框
+ * 		cr：字体颜色
+ * 深浅：通用缺省
+ * 		较深：darker
+ * 		深  ：dark
+ * 		浅  ：light
+ * 		较浅：lighter
+ */
+
+
+/* 白色 */
+
+$color-white   : #ffffff !default;
+$color-white-bg: $color-white;
+$color-white-cr: $color-white;
+$color-white-qr: #f1f1f1;
+
+/* 黑色 */
+
+$color-black-bg: #000000 !default;
+
+/* 灰色 */
+
+
+$color-gray-darker     : #222222 !default;
+$color-gray-dark       : #28354C !default;
+$color-gray-cr-dark    : #28354C !default;
+$color-gray            : #555555 !default;
+$color-gray-light      : #cccccc !default;
+$color-gray-lighter    : #EBECF1 !default;
+$color-gray-bd         : #EBECF1 !default;
+$color-gray-font-darker: #83889A !default;
+$color-gray-font-dark  : #777777 !default;
+$color-gray-font       : #A6A8B6 !default;
+$color-gray-cr         : #888888 !default;
+$color-gray-cr-light   : #d8d8d8 !default;
+$color-gray-bg         : #f5f6f6 !default;
+$color-gray-bg-light   : #f5f6f6 !default;
+$color-gray-font-lighter    : #C4C5CE !default;
+$color-gray-placeholder     : #C4C5CE !default;
+$color-gray-border: #ebecf1;
+$color-gray-padding: #f8f8f8;
+$color-gray-hot: #F4F6F9;
+
+/* 红色 */
+
+$color-red-bg: #ff695c !default;
+$color-red-bg-share: #FF883F !default;
+
+/* 绿色 */
+
+$color-green-bg: #78be20 !default;
+
+/* 青色 */
+
+$color-cyan-bg: #f5f9fb !default;
+
+/* 蓝色 */
+
+$color-blue-bg: #4489FF !default;
+$color-blue-cr-lighter: #3f86ff !default;
+$color-blue-light: #3D64A9;
+
+/* 橙色 */
+$color-orange-btn-active: #ff8200;
+
+/* 橘色 */
+$color-orange-money: #FF695C;
+
+/* 图标类颜色 */
+$color-orange-icon-and-font: #feb70f;
+$color-yellow-icon-and-font: #ffaa45;
+$color-red-icon-and-font: #fe3824;
+$color-green-icon-and-font: #589bff;
+$color-green-light: #02d081;
+
+
+/**
+ *
+ * 医生端
+ * 颜色主题
+ *
+ */
+
+/* 蓝色 */
+
+$color-blue-cr-light: #1ca5fb !default;
+$color-blue-bg-light: #5ac0ff !default;
+
+/* 灰色 */
+
+$color-gray-bd-lighter : #dfdfdf !default;
+$color-gray-cr-light-tint : #dfdfdf !default;
+$color-gray-bd-light   : #bbbbbb !default;
+$color-gray-cr-lighter : #bbbbbb !default;
+
+//== DOM
+$imgPath: "~@/img/";
+
+/* z-index */
+$header-z: 15; /* 头部navbar */
+$float-btn-z: 10; /* 悬浮按钮 */
+$modal-mask-z: 20; /* 遮罩层 */
+$toast-mask-z: 999; /* toast一类的遮罩层 */
+

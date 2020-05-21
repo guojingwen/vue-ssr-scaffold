@@ -1,0 +1,9 @@
+/* 配置项 */
+@import "common/theme";     /* 网站主题颜色 */
+
+/* 导入公共方法 */
+@import "common/mixins";
+
+/* 导入公共样式 */
+@import "common/normalize",  // 建议从github下载一份
+        "common/common";
