@@ -26,7 +26,7 @@ const urlLoaderOptions = {
 
 if (isProd) {
     urlLoaderOptions.outputPath = '/images/'
-    urlLoaderOptions.publicPath = config.domain + '/dist/images'
+    urlLoaderOptions.publicPath = '/dist/images'
 }
 
 const webpackConfig = {
