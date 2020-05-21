@@ -22,7 +22,7 @@ function setCookie (name, value) {
     // 时间
     expdate.setTime(expdate.getTime() + 30 * 60 * 1000)
     // eslint-disable-next-line max-len
-    document.cookie = `${name}=${value};expires=${expdate.toGMTString()};domain=localhost;path=/`
+    document.cookie = `${name}=${value};expires=${expdate.toGMTString()};path=/`
 
     // 即document.cookie= name+"="+value+";path=/";
     // 时间可以不要，但路径(path)必须要填写，因为JS的默认路径是当前页，如果不填，此cookie只在当前页面生效！~
