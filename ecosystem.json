@@ -1,0 +1,29 @@
+{
+  "apps": [
+    {
+      "name": "vue-ssr-scaffold",
+      "script": "server.js",
+      "env": {
+        "COMMON_VARIABLE": "true"
+      },
+      "env_production": {
+        "NODE_ENV": "production"
+      }
+    }
+  ],
+  "deploy": {
+    "production": {
+      "user": "staff1",
+      "host": ["39.100.108.192"],
+      "port": "39999",
+      "ref": "origin/master",
+      "repo": "git@github.com:guojingwen/vue-ssr-scaffold.git",
+      "path": "/www/website/vue-ssr-scaffold",
+      "ssh_options": "StrictHostKeyChecking=no",
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "post-deploy": "cnpm i && npm run build && pm2 restart ecosystem.json --env production"
+    }
+  }
+}
