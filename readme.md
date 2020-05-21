@@ -33,11 +33,11 @@
 1. 瀑布流效果
     - 跳转到"瀑布流"页面，上拉查看翻页效果
     - 跳转到A页面，上拉及点击tabbar查看翻页效果
-    - ![img](./docs_img/tab_flow.gif)
+    - ![img](https://guojingwen.github.io/vue-ssr-scaffold/docs_img/tab_flow.gif)
      
 1. 返回上一页高度及页面切换动画
    - A页面--->滚动一定高度--->跳转B页面--->滚动一定高度--->跳转到C页面--->返回到B页面--->返回到页面
-   - ![img](./docs_img/backtotop.gif)
+   - ![img](https://guojingwen.github.io/vue-ssr-scaffold/docs_img/backtotop.gif)
 
 1. 测试goTop组件
     - 当滚动到超过手机屏幕2.5屏高度且往上滚动时显示，测试流程同上
@@ -57,7 +57,7 @@
         
         - Q: 如果某些数据后退的时候也要更新咋办？
         - A: 新需要缓存的数据都是存在vuex的modules里面通过key值(路由meta.store)取到的，把不需要缓存的数据存储在vuex state里面即可
-    - ![img](./docs_img/login.gif)
+    - ![img](https://guojingwen.github.io/vue-ssr-scaffold/docs_img/login.gif)
 
 ## 使用
 - `npm run dev`
