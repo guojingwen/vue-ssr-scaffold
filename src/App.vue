@@ -70,7 +70,7 @@ export default {
 		position: absolute;
 		height: 100%;
 		width: 100%;
-		transition: all .2s linear;
+		transition: all .22s linear;
 	}
 	.fix-ios10 { // ios 11 以下系统
 		display: -webkit-box;
