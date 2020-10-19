@@ -19,9 +19,10 @@ module.exports.fetchCommonApi = ({path = throwError('第一个参数的path')} =
     }
   }
 
-  const url = Config.apiServer + path
+  let url = Config.apiServer + path
 
   if (process.env.VUE_ENV === 'server') {
+    url = Config.serverApiServer + path
     if (rConfig.needLruCache) {
       const hit = global.apiCache.get(url + JSON.stringify(params))
       if (hit) {
