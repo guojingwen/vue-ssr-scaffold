@@ -55,7 +55,7 @@ if (isProd) {
 }
 
 const serve = (path, cache) => express.static(resolve(path), {
-  maxAge: cache && isProd ? 1000 * 60 * 60 * 24 * 30 : 0
+  maxAge: cache && isProd ? 2 * 365 * 3600 : 0 // 2年
 })
 
 app.use(compression({
