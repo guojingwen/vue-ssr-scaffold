@@ -84,3 +84,5 @@
 1. 调试   在控制台使用 $app
 1. 框架的搭建是参考[官方项目](https://github.com/vuejs/vue-hackernews-2.0/),  技术架构vue2.0, vuex, vue-router, axios
 
+### ecosystem.json
+- 为了节省时间部署时间，没有弄 npm i ，有npm包更新需手动到服务器更新
