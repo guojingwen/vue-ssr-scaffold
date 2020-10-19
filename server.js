@@ -30,8 +30,8 @@ function createRenderer (bundle, options) {
     template,
     // for component caching
     cache: LRU({
-      max: 10000,
-      maxAge: 60 * 60 * 24 * 365 // 一年
+      max: 1000,
+      maxAge: 1000 * 60 * 15
     }),
     // this is only needed when vue-server-renderer is npm-linked
     basedir: resolve('./dist'),
@@ -55,7 +55,7 @@ if (isProd) {
 }
 
 const serve = (path, cache) => express.static(resolve(path), {
-  maxAge: cache && isProd ? 2 * 365 * 3600 : 0 // 2年
+  maxAge: cache && isProd ? 2 * 365 * 3600 * 1000 : 0 // 2年
 })
 
 app.use(compression({

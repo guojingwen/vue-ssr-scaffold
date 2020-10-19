@@ -31,7 +31,7 @@
     "cookie-parser": "^1.4.3",
     "cross-env": "^5.1.1",
     "es6-promise": "^4.1.1",
-    "express": "^4.16.2",
+    "express": "^4.17.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "lodash.clonedeep": "^4.5.0",
     "lru-cache": "^4.1.5",
