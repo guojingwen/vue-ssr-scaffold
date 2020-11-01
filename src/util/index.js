@@ -6,7 +6,7 @@ const {fetchCommonApi, listConcat} = require('../api')
  * var b = {age2: 22, info: {i: 3, k: [1]}, skills: [0, 1, {i: 2}]}
  * merge(a, b)
  */
-const merge = function (target, ...sources) {
+export const merge = function (target, ...sources) {
     for (let source of sources) {
         for (let i in source) {
             if (typeof source[i] === 'object') {
@@ -25,9 +25,8 @@ const merge = function (target, ...sources) {
     }
     return target
 }
-exports.merge = merge
 
-exports.windowBind = (...args) => {
+export const windowBind = (...args) => {
     let windowKey = null, obj = {}
     if (args.length === 1) {
         obj = args[0]
@@ -43,11 +42,11 @@ exports.windowBind = (...args) => {
     }
 }
 
-exports.isObject = function (obj) {
+export const isObject = function (obj) {
     return Object.prototype.toString.call(obj) === '[object Object]'
 }
 
-function getParams (urlstr = location.href) {
+export function getParams (urlstr = location.href) {
     let index = urlstr.indexOf('?')
     if (index < 0) {
         return {}
@@ -60,10 +59,9 @@ function getParams (urlstr = location.href) {
     }
     return p
 }
-exports.getParams = getParams
 
 // 1、区分前进后退 2、记录前一页滚动高度 3、缓存上一页的store
-exports.backHandler = {
+export const backHandler = {
     isBack: false,
     exec () {
         let urlStr = `${location.pathname + location.search}`
@@ -124,9 +122,9 @@ exports.backHandler = {
     cacheOncePageloaded: {},
 }
 
-exports.safelyGetProperty = (obj, properties) => properties.split('.').reduce((acc, property) => acc && acc[property], obj)
+export const  safelyGetProperty = (obj, properties) => properties.split('.').reduce((acc, property) => acc && acc[property], obj)
 
-exports.createList  = function (...arr) {
+export const createList  = function (...arr) {
     const obj = {}
     arr.forEach(item => {
         merge(obj, {
@@ -157,7 +155,7 @@ exports.createList  = function (...arr) {
 }
 
 // 用于tab切换 缓存tab的 selectIndex
-exports.createSelectIndex = function (name) {
+export const createSelectIndex = function (name) {
     return {
         state: {
             [name]: 0
@@ -171,14 +169,14 @@ exports.createSelectIndex = function (name) {
     }
 }
 
-exports.serverCheckLogin = function (context) {
+export const serverCheckLogin = function (context) {
     let target = encodeURIComponent(context.url)
     if (!global.cookies.__wpt) {
         context.res.redirect(302, `/login?target=${target}`)
     }
 }
 
-exports.loginPrompt = function (url = location.href, noTip) {
+export const loginPrompt = function (url = location.href, noTip) {
     if (!noTip) {
         Modal.toast({
             content: '您还未登录，请先登录',

@@ -1,10 +1,10 @@
-const api = require('./setup')
+import api from './setup'
 const Config = require('../../config')
 
 /**
  *  公用ajax请求方法
  */
-module.exports.fetchCommonApi = ({path = throwError('第一个参数的path')} = throwError('第一个参数'), params = {}, config, requestStatesChange = true) => {
+export const fetchCommonApi = ({path = throwError('第一个参数的path')} = throwError('第一个参数'), params = {}, config, requestStatesChange = true) => {
   const rConfig = {}
   if (Reflect.toString.call(config) === '[object Object]') {
     rConfig.$states = config
@@ -45,7 +45,7 @@ const throwError = (name) => {
   throw new Error(`${name}必填！`)
 }
 
-module.exports.listConcat = (target, source) => {
+export const listConcat = (target, source) => {
   if ([0, 1].includes(source.pageIndex)) {
     Object.assign(target, source)
     target.list.length = (source.list || []).length

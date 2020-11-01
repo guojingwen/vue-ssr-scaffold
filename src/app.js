@@ -1,12 +1,11 @@
 // 引入babel的es6特性兼容，兼容对象为安卓4.4   IE9及以下
-import 'babel-polyfill'
 import './scss/index.scss'
 import Vue from 'vue'
 import App from './App.vue'
 import { createStore } from './store'
 import { createRouter } from './router'
 import htmlHeadConfigMixin from './util/html-head-config'
-import utils from './util'
+import * as utils from './util'
 import installGlobalComponents from 'components'
 // import Raven from 'raven-js';
 // import RavenVue from 'raven-js/plugins/vue';

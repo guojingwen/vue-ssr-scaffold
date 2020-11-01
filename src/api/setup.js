@@ -102,4 +102,4 @@ api.interceptors.response.use(res => {
 api.defaults.headers.common['Accept'] = 'application/json'
 api.defaults.headers.common['Content-Type'] = 'application/json'
 
-module.exports = api
+export default api
