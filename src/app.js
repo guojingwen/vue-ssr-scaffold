@@ -7,13 +7,14 @@ import { createRouter } from './router'
 import htmlHeadConfigMixin from './util/html-head-config'
 import * as utils from './util'
 import installGlobalComponents from 'components'
+import Modal from './util/modal'
 // import Raven from 'raven-js';
 // import RavenVue from 'raven-js/plugins/vue';
 // const isProd = process.env.NODE_ENV === 'production'
 
 if (process.env.VUE_ENV === 'client') {
   // 注册 弹窗组件到 window
-  utils.windowBind('Modal', require('./util/modal'))
+  utils.windowBind('Modal', Modal)
 
   // 注册 fastclick 现在浏览器已经用不到 fastclick 了
   // const FastClick = require('fastclick')
