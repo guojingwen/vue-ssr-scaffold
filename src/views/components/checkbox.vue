@@ -3,6 +3,7 @@
 		<wp-header title="checkbox"></wp-header>
 		<br>
 		<div class="container">
+<!--			<wp-checkbox data-test="val" v-model="isChoose" />-->
 			<wp-checkbox v-model="isChoose" />
 			<p class="hint">状态: {{isChoose}}</p>
 		</div>

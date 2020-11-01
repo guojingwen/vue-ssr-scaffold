@@ -1,6 +1,7 @@
 <template>
-	<span class="wp-checkbox" @click.stop="currentValue = !currentValue">
-		<input type="checkbox" class="wp-checkbox-input" v-model="currentValue">
+	<span class="wp-checkbox" @click="$emit('input', !value)">
+		<input type="checkbox"
+					 v-bind="$attrs" v-model="value" class="wp-checkbox-input">
 		<span class="wp-checkbox-core"></span>
 	</span>
 </template>
@@ -12,22 +13,10 @@
  * <wp-checkbox v-model="item.chose" />
  */
 export default {
+  inheritAttrs: false,
   name: 'wp-checkbox',
   props: {
     value: Boolean
-  },
-  data () {
-    return {
-      currentValue: this.value
-	  }
-  },
-  watch: {
-    value (val) {
-      this.currentValue = val
-    },
-    currentValue (val) {
-      this.$emit('input', val)
-    }
   }
 }
 </script>
