@@ -13,12 +13,12 @@
   ],
   "deploy": {
     "production": {
-      "user": "zjy",
-      "host": ["58.240.35.228"],
+      "user": "gjw",
+      "host": ["106.14.247.154"],
       "port": "22",
       "ref": "origin/master",
       "repo": "git@github.com:guojingwen/vue-ssr-scaffold.git",
-      "path": "/disk/c/gjw/website/vue-ssr-scaffold",
+      "path": "/website/vue-ssr-scaffold",
       "ssh_options": "StrictHostKeyChecking=no",
       "env": {
         "NODE_ENV": "production"
